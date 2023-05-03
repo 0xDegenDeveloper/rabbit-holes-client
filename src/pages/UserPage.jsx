@@ -8,9 +8,9 @@ import UserSearchBar from "../components/UserSearchBar";
 import fetchUserData from "../components/hooks/fetchUserData";
 
 export default function UserPage(props) {
-  const [isHoles, setIsHoles] = useState(true);
+  const { key, key2 } = useParams();
 
-  const { key } = useParams();
+  const [isHoles, setIsHoles] = useState(true);
 
   const [user, setUser] = useState(key ? key : "0x1234...abcd");
 
@@ -52,7 +52,7 @@ export default function UserPage(props) {
                       className="hole-link"
                       // key={"hole" + index}
                       onClick={() => {
-                        navigate(`/gallary/${hole.id}`);
+                        navigate(`/archive/${hole.id}`);
                       }}
                     >
                       <h4>
@@ -77,7 +77,7 @@ export default function UserPage(props) {
                       className="hole-link"
                       // key={"rabbit" + index}
                       onClick={() => {
-                        navigate(`/gallary/${rabbit.hole_id}/${rabbit.id}`);
+                        navigate(`/archive/${rabbit.hole_id}/${rabbit.id}`);
                       }}
                     >
                       <h4>
@@ -168,7 +168,7 @@ const Wrapper = styled.div`
   }
 
   .active {
-    color: var(--limeGreen);
+    color: var(--lightGreen);
   }
 
   .activeR {
@@ -182,7 +182,8 @@ const Wrapper = styled.div`
   .wrapper3 {
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 1rem;
+    gap: 0.5rem;
+    font-size: clamp(9px, 3vw, 14px);
 
     .a {
       margin-left: auto;
@@ -255,7 +256,7 @@ const Wrapper = styled.div`
 
     color: var(--forrestGreen);
     em {
-      color: var(--greyGreen);
+      color: var(--lightGreen);
     }
   }
 

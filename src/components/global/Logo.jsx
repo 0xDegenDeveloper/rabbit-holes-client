@@ -37,7 +37,7 @@ export default function Logo(props) {
 }
 
 const LogoStyle = styled.div`
-  position: fixed;
+  position: absolute;
   z-index: 100;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);

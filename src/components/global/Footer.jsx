@@ -48,10 +48,10 @@ export default function Footer() {
 }
 
 const FooterWrapper = styled.div`
-  position: fixed;
+  position: absolute;
   margin-top: auto;
-  bottom: -2px;
-  right: 0.5rem;
+  bottom: -0.3rem;
+  right: 0.3rem;
   z-index: 100;
   padding: 0.5rem 0.8rem 0.5rem 1rem;
   font-family: "Cairo";
@@ -108,7 +108,7 @@ const FooterTop = styled.div`
 const FooterBottom = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 3rem 0.2rem;
+  padding: 0.5rem 2rem 0.2rem;
   /* padding: 3rem 0rem 3rem 1rem; */
   /* transform: rotate(180deg); */
   color: var(--forrestGreen);

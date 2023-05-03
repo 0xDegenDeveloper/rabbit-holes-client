@@ -45,20 +45,26 @@ const GlobalStyle = createGlobalStyle`
 
     .container {
         position: absolute;
-        width: 80vw;
+        ${"" /* width: 100vw; */}
         top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 20vh 10vw; 
-        min-height: 60vh;      
+        ${"" /* padding: 20vh 10vw;  */}
+        max-height: 100vh;      
     }
 
     @media only screen and (max-width: 760px) {
         .container{
-            width: 70vw;
+            ${
+              "" /* width: 8vw;
             padding: 15vh 15vw; 
-            min-height: 70vh;
+            min-height: 70vh; */
+            }
+        
         }
     }
 
@@ -89,6 +95,31 @@ const GlobalStyle = createGlobalStyle`
         border-radius: 1rem;
         margin: 0;
         width: clamp(75px, 40vw, 500px);
+        overflow: scroll;
+        text-align: left;
+        background-color: var(--forrestGreen);
+        color: var(--lightGreen);
+        border: 3px solid var(--forrestGreen);
+        font-family: "Andale Mono", monospace;
+        font-size: clamp(12px, 3vw, 15px);
+
+        box-shadow: 0px 0px 5px 0px var(--forrestGreen);
+
+        ${
+          "" /* background-color: rgba(255, 255, 255, 0.01);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        -moz-backdrop-filter: blur(2px);
+        -o-backdrop-filter: blur(2px);
+        -ms-backdrop-filter: blur(2px);
+        box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2); */
+        }
+    }
+    .outlined-boxxx{
+        padding: 1rem;
+        border-radius: 1rem;
+        margin: 0;
+        ${"" /* width: clamp(75px, 40vw, 700px); */}
         overflow: scroll;
         text-align: left;
         background-color: var(--forrestGreen);

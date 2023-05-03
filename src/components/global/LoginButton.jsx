@@ -19,7 +19,7 @@ export default function LoginButton(props) {
 }
 
 const LoginBtn = styled.div`
-  position: fixed;
+  position: absolute;
   max-width: fit-content;
   white-space: nowrap;
   background-color: var(--forrestGreen);

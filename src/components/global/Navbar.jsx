@@ -15,10 +15,8 @@ export default function Navbar(props) {
   const location = useLocation();
 
   const handleArchiveClick = () => {
-    if (!location.pathname.startsWith("/gallary")) {
-      let randomInt = parseInt(Math.random() * 1111);
-      // return `/gallary/${randomInt}`;
-      return `/gallary/`;
+    if (!location.pathname.startsWith("/archive")) {
+      return `/archive/`;
     }
   };
 
@@ -62,6 +60,7 @@ function NavLink({ to, children, icon }) {
 }
 
 const Nav = styled.nav`
+  position: absolute;
   z-index: 100;
   display: flex;
   flex-direction: column;
@@ -86,6 +85,11 @@ const NavLinks = styled.ul`
   padding: 0;
   list-style: none;
   font-size: clamp(15px, 5vw, 25px);
+
+  @media only screen and (max-width: 760px) {
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const NavLinksLi = styled.li`
@@ -100,10 +104,13 @@ const NavLinksLi = styled.li`
 
   @media only screen and (max-width: 760px) {
     &.active {
-      padding-left: 0.5rem;
+      /* padding-left: 0.1rem; */
     }
-
     padding: 0.5rem;
+
+    /// neeed to do something here to fix mobile padding
+
+    /* padding: 0.5rem; */
   }
 
   /* &:hover {
@@ -116,7 +123,7 @@ const NavLinkEl = styled(Link)`
   color: var(--forrestGreen);
 
   &:hover {
-    padding-left: 0.5rem;
+    /* padding-left: 0.5rem; */
     color: var(--greyGreen);
   }
 

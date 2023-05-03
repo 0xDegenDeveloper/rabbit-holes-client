@@ -78,7 +78,7 @@ export default function DigHolePage(props) {
               ></FontAwesomeIcon>
             </SearchBtn>
           </SearchBox>
-          <div className="outlined-box info">
+          <div className="outlined-box info" id="info">
             <h1>Dig Check</h1>
             {/* <h2>testing</h2>
             <h3>testing</h3> */}
@@ -126,10 +126,9 @@ const Wrapper = styled.div`
   grid-template-rows: auto auto;
   gap: 2rem;
   text-align: center;
-  margin: auto 0;
-  /* place-content: center;
-  place-items: center; */
-  /* user-select: none; */
+  max-height: 60%;
+  place-content: center;
+  place-items: center;
 
   .felts {
     max-height: 100px;
@@ -148,6 +147,10 @@ const Wrapper = styled.div`
     color: var(--forrestGreen);
   }
 
+  .info {
+    margin: 0 auto;
+  }
+
   .info h1 {
     color: var(--forrestGreen);
   }
@@ -155,11 +158,10 @@ const Wrapper = styled.div`
   input,
   textarea {
     font-size: clamp(5px, 3vw, 12px);
-    /* color: red; */
     :focus {
       outline: none;
     }
-    max-width: 100%;
+    width: 100%;
   }
 `;
 
@@ -168,50 +170,27 @@ const SearchBox = styled.div`
   gap: 1rem;
   font-size: clamp(25px, 4vw, 50px);
   align-items: center;
-
   border-radius: 2rem;
   padding: 1rem;
   border: 3px solid var(--forrestGreen);
   background-color: var(--forrestGreen);
   color: var(--limeGreen);
-  /* text-transform: uppercase; */
-  width: clamp(150px, 40vw, 500px);
+  width: clamp(150px, 55vw, 500px);
   font-family: "Andale Mono", monospace;
   box-shadow: 0px 0px 5px 0px var(--forrestGreen);
-
-  @media only screen and (max-width: 760px) {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 0;
-
-    #h {
-      border-top: 1px solid var(--greyGreen);
-      padding-top: 1rem;
-    }
-  }
+  margin: 0 auto;
 `;
 
-// const SearchBar = styled.input`
-const SearchBar = styled.textarea`
-  /* border-radius: 2rem; */
-  /* padding: 0.5rem 0; */
+const SearchBar = styled.input`
   border: none;
-  /* border: 3px solid var(--greyGreen); */
   background-color: rgba(0, 0, 0, 0);
   color: var(--lightGreen);
-  width: clamp(150px, 40vw, 500px);
   font-family: "Andale Mono", monospace;
   text-transform: uppercase;
-
   height: 10px;
   min-height: 10px;
   resize: vertical;
-  /* overflow: hidden; */
-  /* transition: height 0.3s ease; Add a transition effect */
+  overflow: hidden;
 
   ::placeholder {
     color: var(--limeGreen);
@@ -226,6 +205,8 @@ const SearchBtn = styled.div`
   color: var(--limeGreen);
   font-size: 1.5rem;
   padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  margin-left: auto;
 
   :hover {
     cursor: pointer;

@@ -4,12 +4,13 @@ import { useState, useEffect } from "react";
 import GlobalStyles from "./components/global/GlobalStyles";
 import TopComponents from "./components/global/TopComponents";
 import HomePage from "./pages/HomePage";
-import Gallary from "./pages/Gallary";
+// import Gallary from "./pages/Gallary";
 import StatsPage from "./pages/StatsPage";
 import UserPage from "./pages/UserPage";
 import InfoPage from "./pages/InfoPage";
 import DigHolePage from "./pages/DigHolePage";
 import BurnRabbitPage from "./pages/BurnRabbitPage";
+import ArchivePage from "./pages/ArchivePage";
 
 function App() {
   const [mobile, setMobile] = useState(false);
@@ -38,12 +39,23 @@ function App() {
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/stats" element={<StatsPage />}></Route>
           <Route path="/info" element={<InfoPage />}></Route>
-          <Route path="/gallary" element={<Gallary mobile={mobile} />} />
+          {/* <Route path="/gallary" element={<Gallary mobile={mobile} />} />
           <Route path="/gallary/:key" element={<Gallary mobile={mobile} />} />
           <Route
             path="/gallary/:key/:key2"
             element={<Gallary mobile={mobile} />}
+          /> */}
+
+          <Route path="/archive" element={<ArchivePage mobile={mobile} />} />
+          <Route
+            path="/archive/:key"
+            element={<ArchivePage mobile={mobile} />}
           />
+          <Route
+            path="/archive/:key/:key2"
+            element={<ArchivePage mobile={mobile} />}
+          />
+
           <Route path="/dig-hole" element={<DigHolePage mobile={mobile} />} />
           <Route
             path="/dig-hole/:key"
@@ -59,6 +71,10 @@ function App() {
           />
           <Route path="/user" element={<UserPage mobile={mobile} />} />
           <Route path="/user/:key" element={<UserPage mobile={mobile} />} />
+          <Route
+            path="/user/:key/:key2"
+            element={<UserPage mobile={mobile} />}
+          />
         </Routes>
       </BrowserRouter>
     </>

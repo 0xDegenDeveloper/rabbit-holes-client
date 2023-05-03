@@ -11,10 +11,10 @@ export default function HomePage() {
   function passInput() {
     let url = "";
 
-    if (input.toLocaleUpperCase() == "JEFFERY EPSTEIN") url = "/gallary/1";
-    else if (input.toLocaleUpperCase() == "BREATHWORK") url = "/gallary/2";
+    if (input.toLocaleUpperCase() == "JEFFERY EPSTEIN") url = "/archive/1";
+    else if (input.toLocaleUpperCase() == "BREATHWORK") url = "/archive/2";
     else if (input.toLocaleUpperCase() == "CONSPIRACY THEORIES")
-      url = "/gallary/3";
+      url = "/archive/3";
     else url = "/dig-hole/" + input.toUpperCase();
 
     navigate(url);
