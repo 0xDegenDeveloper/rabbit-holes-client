@@ -17,6 +17,11 @@ function App() {
   const totalDigs = 1111;
 
   useEffect(() => {
+    /// favicon
+    const faviconPath = `/logo.png`;
+    const faviconLink = document.querySelector("#favicon-link"); // Use the id attribute
+    faviconLink.setAttribute("href", faviconPath);
+
     const handleResize = () => {
       const isMobile = window.innerWidth < 760;
       setMobile(isMobile);
