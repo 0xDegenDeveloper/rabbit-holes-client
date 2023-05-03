@@ -121,6 +121,7 @@ export default function DigHolePage(props) {
 }
 
 const Wrapper = styled.div`
+  user-select: none;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto auto;

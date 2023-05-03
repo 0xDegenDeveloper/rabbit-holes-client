@@ -50,8 +50,6 @@ export default function ArchivePage(props) {
       setRabbitJump(newIndex);
       document.getElementById("rabbit-jump").value = newIndex;
     }
-
-    console.log("set rabbit jump to ", newIndex);
   }
 
   function holeJumpLeft() {
@@ -230,6 +228,7 @@ export default function ArchivePage(props) {
 }
 
 const Wrapper = styled.div`
+  border: none;
   /* margin-top: 10vh; */
   display: grid;
   grid-template-columns: auto;
@@ -281,7 +280,8 @@ const Wrapper = styled.div`
     margin-top: auto;
     display: flex;
     justify-content: center;
-    margin-right: 0.5rem;
+    margin-left: auto;
+    /* margin-right: 0.5rem; */
 
     /* padding: 0.25rem; */
 
@@ -298,6 +298,7 @@ const Wrapper = styled.div`
     color: var(--lightGreen);
     overflow: hidden;
     padding: 0.5rem;
+    width: fit-content;
 
     :hover {
       cursor: pointer;

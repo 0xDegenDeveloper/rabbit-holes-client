@@ -45,7 +45,6 @@ const GlobalStyle = createGlobalStyle`
 
     .container {
         position: absolute;
-        ${"" /* width: 100vw; */}
         top: 0;
         left: 0;
         right: 0;
@@ -53,8 +52,20 @@ const GlobalStyle = createGlobalStyle`
         display: flex;
         align-items: center;
         justify-content: center;
-        ${"" /* padding: 20vh 10vw;  */}
         max-height: 100vh;      
+    }
+
+    .container2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        ${"" /* bottom: 0; */}
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;    
     }
 
     @media only screen and (max-width: 760px) {
@@ -77,7 +88,7 @@ const GlobalStyle = createGlobalStyle`
         text-align: left;
         background-color: var(--forrestGreen);
         color: var(--lightGreen);
-        border: 3px solid var(--forrestGreen);
+        border: 2px solid var(--forrestGreen);
         font-family: "Andale Mono", monospace;
         font-size: clamp(12px, 3vw, 15px);
 

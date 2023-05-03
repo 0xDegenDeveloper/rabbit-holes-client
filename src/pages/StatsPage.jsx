@@ -4,9 +4,17 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: auto;
   gap: 2rem;
+  user-select: none;
 
   h2 {
     color: var(--limeGreen);
+    margin: 0.5rem 0 1rem;
+    font-size: clamp(12px, 5vw, 24px);
+  }
+
+  h4 {
+    font-size: clamp(8px, 4vw, 14px);
+    margin: 0.5rem 0;
   }
 `;
 

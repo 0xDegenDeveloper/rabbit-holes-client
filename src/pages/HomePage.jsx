@@ -81,7 +81,7 @@ const SearchBar = styled.input`
   color: var(--lightGreen);
 
   text-transform: uppercase;
-  width: clamp(150px, 40vw, 500px);
+  width: clamp(100px, 35vw, 500px);
   font-family: "Andale Mono", monospace;
   font-size: clamp(7px, 3vw, 13px);
 
@@ -108,17 +108,17 @@ const SearchBtn = styled.div`
   font-size: clamp(25px, 4vw, 30px);
   padding: 1rem;
 
-  :hover {
-    cursor: pointer;
-    color: var(--limeGreen);
-  }
-
   &.one {
     color: var(--forrestGreen);
   }
 
   &.two {
-    color: var(--greyGreen);
+    color: var(--limeGreen);
+  }
+
+  :hover {
+    cursor: pointer;
+    color: var(--lightGreen);
   }
 
   /* @media only screen and (max-width: 760px) {

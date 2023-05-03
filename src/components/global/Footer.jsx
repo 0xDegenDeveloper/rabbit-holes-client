@@ -48,9 +48,9 @@ export default function Footer() {
 }
 
 const FooterWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   margin-top: auto;
-  bottom: -0.3rem;
+  bottom: -0.1rem;
   right: 0.3rem;
   z-index: 100;
   padding: 0.5rem 0.8rem 0.5rem 1rem;
@@ -107,8 +107,9 @@ const FooterTop = styled.div`
 
 const FooterBottom = styled.div`
   display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 2rem 0.2rem;
+  /* justify-content: space-between; */
+  justify-content: space-evenly;
+  /* padding: 0.5rem 1rem 0.2rem; */
   /* padding: 3rem 0rem 3rem 1rem; */
   /* transform: rotate(180deg); */
   color: var(--forrestGreen);

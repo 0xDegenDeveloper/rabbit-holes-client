@@ -121,6 +121,7 @@ const Wrapper = styled.div`
   gap: 1rem;
   text-align: center;
   margin: auto 0;
+  user-select: none;
   /* place-content: center;
   place-items: center; */
   /* user-select: none; */

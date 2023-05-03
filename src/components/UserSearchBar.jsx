@@ -65,6 +65,10 @@ const SearchBar = styled.input`
   ::placeholder {
     color: var(--limeGreen);
   }
+
+  :focus {
+    outline: none;
+  }
 `;
 
 const SearchBtn = styled.div`
