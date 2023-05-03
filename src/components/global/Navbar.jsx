@@ -30,8 +30,8 @@ export default function Navbar(props) {
       <Nav>
         <NavLinks>
           <NavLink to="/" icon={faSearch}></NavLink>
-          <NavLink to={handleArchiveClick()} icon={faEarthAmerica}></NavLink>
           <NavLink to="/stats" icon={faChartSimple}></NavLink>
+          <NavLink to={handleArchiveClick()} icon={faEarthAmerica}></NavLink>
 
           <NavLink
             // to="/user"
