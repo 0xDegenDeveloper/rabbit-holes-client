@@ -1,0 +1,73 @@
+{
+  "0": {
+    "title": "EXAMPLE HOLE",
+    "digger": "0x0000...0000",
+    "timestamp": "12/12/2222",
+    "rabbits": [
+      {
+        "msg": "Example of a message burned inside a hole",
+        "burner": "0x0000...0000",
+        "id": "0",
+        "timestamp": "4/20/2023"
+      }
+    ]
+  },
+  "1": {
+    "title": "SHOWER THOUGHTS",
+    "digger": "Alice.eth",
+    "timestamp": "1/1/23",
+    "rabbits": [
+      {
+        "msg": "Who would have thought that the first shower thought to be immortalized on the blockchain would be about the very concept of storing shower thoughts on the blockchain?",
+        "burner": "Bob.eth",
+        "id": "1",
+        "timestamp": "4/20/2023"
+      }
+    ]
+  },
+  "4": {
+    "title": "JEFFERY EPSTEIN",
+    "digger": "0x1234...abcd",
+    "timestamp": "1/1/23",
+    "rabbits": [
+      {
+        "msg": "Didn't kill himself",
+        "burner": "0x1234...abcd",
+        "id": "2",
+        "timestamp": "4/20/2023"
+      },
+      {
+        "msg": "IAs involved",
+        "id": "3",
+        "burner": "0x1234...abcd",
+        "timestamp": "4/20/2023"
+      }
+    ]
+  },
+  "2": {
+    "title": "BREATHWORK",
+    "digger": "0x2468...bdfF",
+    "timestamp": "1/1/23",
+    "rabbits": [
+      {
+        "msg": "I started doing wim hoff everyday and life started getting trippy",
+        "id": "4",
+        "burner": "0x1234...abcd",
+        "timestamp": "4/20/23"
+      }
+    ]
+  },
+  "3": {
+    "title": "CONSIPRACY THEORIES",
+    "digger": "0x2468...bdfF",
+    "timestamp": "1/1/23",
+    "rabbits": [
+      {
+        "msg": "They're poisoning the food supply",
+        "id": "5",
+        "burner": "0x1234...abcd",
+        "timestamp": "4/20/23"
+      }
+    ]
+  }
+}
