@@ -63,8 +63,9 @@ const Wrapper = styled.div`
   width: clamp(60vw, 40vw, 500px);
   display: grid;
   gap: 1rem;
-  height: 60%;
+  height: 70%;
   user-select: none;
+  overflow: scroll;
 
   .token-logo {
     margin-top: 1rem;

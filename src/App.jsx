@@ -12,6 +12,8 @@ import DigHolePage from "./pages/DigHolePage";
 import BurnRabbitPage from "./pages/BurnRabbitPage";
 import ArchivePage from "./pages/ArchivePage";
 
+import FadeIn from "./components/global/FadeIn";
+
 import Graphics from "./components/graphics/Graphics";
 
 function App() {
