@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     /// favicon
-    const faviconPath = `/logo.png`;
+    const faviconPath = `/logo1.png`;
     const faviconLink = document.querySelector("#favicon-link"); // Use the id attribute
     faviconLink.setAttribute("href", faviconPath);
 
