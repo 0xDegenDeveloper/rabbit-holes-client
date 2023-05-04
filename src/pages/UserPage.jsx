@@ -26,7 +26,7 @@ export default function UserPage(props) {
 
           {isHoles && !key && (
             <div className="user-holes-section">
-              <div className="outlined-box user-holes">
+              <div className="outlined-box user-holes" id="clear-box">
                 {userData.holes.map((hole, index) => (
                   <React.Fragment key={"hole" + index}>
                     <div
@@ -51,7 +51,7 @@ export default function UserPage(props) {
           )}
           {!isHoles && !key && (
             <div className="user-holes-section">
-              <div className="outlined-box user-holes">
+              <div className="outlined-box user-holes" id="clear-box">
                 {userData.rabbits.map((rabbit, index) => (
                   <React.Fragment key={"rabbit" + index}>
                     <div
@@ -149,12 +149,18 @@ const Wrapper = styled.div`
   gap: 1rem;
   color: var(--forrestGreen);
   place-items: center;
+  place-content: center;
   user-select: none;
+  /* width: clamp(100px, 30vw, 500px); */
+  width: clamp(200px, 60%, 400px);
+
+  /* width: 100%; */
 
   .wrapper2 {
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 1rem;
+    /* width: 100%; */
     /* padding-top: 1rem; */
 
     &:hover {
@@ -239,6 +245,8 @@ const Wrapper = styled.div`
   }
 
   .user-holes-section {
+    /* min-width: 300px; */
+    /* width: 100%; */
   }
 
   .hole-link {
@@ -255,12 +263,18 @@ const Wrapper = styled.div`
     }
   }
 
+  #clear-box {
+    width: clamp(200px, 40vw, 600px);
+  }
+
   .user-holes {
     max-height: 200px;
     overflow-y: scroll;
     display: grid;
     grid-template-columns: auto;
     gap: 0rem;
+    margin: 0 auto;
+    width: fit-content;
 
     margin-top: 1rem;
 
