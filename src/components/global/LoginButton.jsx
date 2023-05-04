@@ -53,7 +53,8 @@ const LoginBtn = styled.div`
 
   left: -2px;
   padding: 1rem 1rem;
-  z-index: 100;
+  z-index: 1000;
+  overflow: hidden;
 
   font-family: "Lato";
   font-weight: 700;

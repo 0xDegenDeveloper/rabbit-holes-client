@@ -52,7 +52,7 @@ const FooterWrapper = styled.div`
   margin-top: auto;
   bottom: -0.1rem;
   right: 0.3rem;
-  z-index: 100;
+  z-index: 1000;
   padding: 0.5rem 0.8rem 0.5rem 1rem;
   font-family: "Cairo";
   letter-spacing: 0.5px;
@@ -75,6 +75,7 @@ const FooterWrapper = styled.div`
   -o-backdrop-filter: blur(2px);
   -ms-backdrop-filter: blur(2px);
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 
   &:hover {
     /* background-color: var(--lightGreen); */

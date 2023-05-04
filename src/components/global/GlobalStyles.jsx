@@ -20,6 +20,8 @@ const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         -webkit-text-size-adjust: 100%;
+        border:none;
+
     }
 
     @font-face {
@@ -30,6 +32,10 @@ const GlobalStyle = createGlobalStyle`
 
     html {
         background-color: black;
+        border:none;
+        overflow: hidden;
+
+
     }
 
     body {
@@ -37,6 +43,11 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         overflow-y: scroll;
         font-family: "Andale Mono", monospace;
+        border:none;
+        overflow: hidden;
+
+        ${"" /* scroll-behavior: */}
+
     }
 
     em {
@@ -52,7 +63,10 @@ const GlobalStyle = createGlobalStyle`
         display: flex;
         align-items: center;
         justify-content: center;
-        max-height: 100vh;      
+        max-height: 100vh;   
+        z-index: 999;   
+        border:none;
+        overflow: hidden;
     }
 
     .container2 {

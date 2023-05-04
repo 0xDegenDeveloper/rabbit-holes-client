@@ -12,6 +12,8 @@ import DigHolePage from "./pages/DigHolePage";
 import BurnRabbitPage from "./pages/BurnRabbitPage";
 import ArchivePage from "./pages/ArchivePage";
 
+import Graphics from "./components/graphics/Graphics";
+
 function App() {
   const [mobile, setMobile] = useState(false);
   const totalDigs = 1111;
@@ -37,8 +39,14 @@ function App() {
 
   return (
     <>
+      <Graphics />
+
       <GlobalStyles mobile={mobile} />
-      <BrowserRouter>
+      <BrowserRouter
+        style={{
+          zIndex: 200,
+        }}
+      >
         <TopComponents totalDigs={totalDigs} mobile={mobile} />
         <Routes>
           <Route path="/" element={<HomePage />}></Route>

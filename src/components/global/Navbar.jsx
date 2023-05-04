@@ -61,7 +61,7 @@ function NavLink({ to, children, icon }) {
 
 const Nav = styled.nav`
   position: absolute;
-  z-index: 100;
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   align-items: left;
