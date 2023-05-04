@@ -75,7 +75,7 @@ const SearchBox = styled.div`
 
 const SearchBar = styled.input`
   border-radius: 2rem;
-  padding: 1rem;
+  padding: 0.5rem;
   border: 3px solid var(--forrestGreen);
   background-color: rgba(0, 0, 0, 0);
   color: var(--lightGreen);
@@ -83,7 +83,7 @@ const SearchBar = styled.input`
   text-transform: uppercase;
   width: clamp(100px, 35vw, 500px);
   font-family: "Andale Mono", monospace;
-  font-size: clamp(7px, 3vw, 13px);
+  font-size: clamp(6px, 2vw, 10px);
 
   ::placeholder {
     color: var(--limeGreen);
@@ -105,8 +105,9 @@ const SearchBar = styled.input`
 
 const SearchBtn = styled.div`
   /* color: var(--greyGreen); */
-  font-size: clamp(25px, 4vw, 30px);
-  padding: 1rem;
+  font-size: clamp(15px, 4vw, 20px);
+  padding: 0.5rem;
+  padding-right: 1rem;
 
   &.one {
     color: var(--forrestGreen);
