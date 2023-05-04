@@ -41,6 +41,7 @@ export default function DigHolePage(props) {
       holeTitle == "JEFFERY EPSTEIN" ||
       holeTitle == "BREATHWORK" ||
       holeTitle == "CONSPIRACY THEORIES" ||
+      holeTitle == "SHOWER THOUGHTS" ||
       holeTitle == ""
     ) {
       setCheckTwo(false);
