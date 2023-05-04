@@ -11,8 +11,9 @@ export default function HomePage() {
   function passInput() {
     let url = "";
 
-    if (input.toLocaleUpperCase() == "JEFFERY EPSTEIN") url = "/archive/1";
+    if (input.toLocaleUpperCase() == "JEFFERY EPSTEIN") url = "/archive/4";
     else if (input.toLocaleUpperCase() == "BREATHWORK") url = "/archive/2";
+    else if (input.toLocaleUpperCase() == "SHOWER THOUGHTS") url = "/archive/1";
     else if (input.toLocaleUpperCase() == "CONSPIRACY THEORIES")
       url = "/archive/3";
     else url = "/dig-hole/" + input.toUpperCase();
