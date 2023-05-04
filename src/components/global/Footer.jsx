@@ -108,11 +108,7 @@ const FooterTop = styled.div`
 
 const FooterBottom = styled.div`
   display: flex;
-  /* justify-content: space-between; */
   justify-content: space-evenly;
-  /* padding: 0.5rem 1rem 0.2rem; */
-  /* padding: 3rem 0rem 3rem 1rem; */
-  /* transform: rotate(180deg); */
   color: var(--forrestGreen);
 
   a {

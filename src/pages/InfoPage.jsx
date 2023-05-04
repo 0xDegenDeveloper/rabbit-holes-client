@@ -1,11 +1,8 @@
-import { faOpencart } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
-export default function InfoPage(props) {
-  /// copy stuff from repo/rewrite repo
-
+export default function InfoPage() {
   return (
     <>
       <div className="container">
@@ -20,7 +17,6 @@ export default function InfoPage(props) {
             <h4>Digging a hole creates a discussion topic.</h4>
             <h4>Burning a rabbit adds a message to the discussion.</h4>
           </div>
-
           <div className="outlined-boxxx box">
             <h1>Mechanics</h1>
             <h4>
@@ -48,9 +44,8 @@ export default function InfoPage(props) {
               </a>
             </h4>
           </div>
-
           <div className="token-logo">
-            <img src="/logo3.png" />
+            <img src="/logo.png" />
           </div>
         </Wrapper>
       </div>
@@ -59,33 +54,27 @@ export default function InfoPage(props) {
 }
 
 const Wrapper = styled.div`
-  //
-  width: clamp(60vw, 40vw, 500px);
+  width: clamp(60vw, 40vw, 400px);
   display: grid;
   gap: 1rem;
   height: 70%;
   user-select: none;
-  overflow: scroll;
 
   .token-logo {
     margin-top: 1rem;
     display: grid;
     place-items: center;
-    /* width: clamp(150px, 30vw, 300px); */
 
     img {
       width: clamp(50px, 30vw, 100px);
 
       :hover {
         cursor: pointer;
-        animation: rotate360 4s infinite ease-in-out;
+        animation: rotate360 3s infinite ease-in-out;
       }
     }
 
     @keyframes rotate360 {
-      /* to {
-      transform: rotate(360deg);
-    } */
       0% {
         transform: rotate(0deg);
       }
@@ -93,10 +82,7 @@ const Wrapper = styled.div`
       52% {
         transform: rotate(720deg);
       }
-      /* 50%,
-    55% {
-      transform: rotate(-720deg);
-    } */
+
       75%,
       100% {
         transform: rotate(0deg);

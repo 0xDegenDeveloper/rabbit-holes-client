@@ -1,35 +1,3 @@
-// import { useState } from "react";
-// import sample from "../../assets/sample-data.json";
-
-// export default function fetchUserData(holeId) {
-//   /// get hole id, title, depth
-
-//   const holes = [];
-//   const rabbits = [];
-
-//   for (const key in sample) {
-//     if (parseInt(key) == 0) continue;
-//     let hole = sample[key];
-//     let details = {
-//       title: hole.title,
-//       depth: hole.rabbits.length + 11,
-//       id: parseInt(key),
-//     };
-//     holes.push(details);
-//     for (let h in sample[key].rabbits) {
-//       let rabbit = sample[key].rabbits[h];
-//       let rabbitDetails = {
-//         global_id: rabbit.id,
-//         msg: rabbit.msg,
-//         id: parseInt(h) + 1,
-//         hole_id: key,
-//         title: hole.title,
-//       };
-//       rabbits.push(rabbitDetails);
-//     }
-//   }
-//   return { holes, rabbits };
-// }
 import sample from "../../assets/sample-data.json";
 
 export default function fetchUserData(holeId) {

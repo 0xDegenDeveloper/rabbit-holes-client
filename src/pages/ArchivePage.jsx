@@ -1,8 +1,6 @@
-import { useMemo, useState, useRef } from "react";
+import { useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
-import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-
 import fetchHoleData from "../components/hooks/fetchHoleData";
 import fetchRabbitData from "../components/hooks/fetchRabbitData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,15 +10,14 @@ import {
   faCircleArrowRight,
   faFireAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
 
-export default function ArchivePage(props) {
+export default function ArchivePage() {
   const totalDigs = 1111;
-
-  const navigate = useNavigate();
   let { key, key2 } = useParams();
+
   if (!key || parseInt(key) == 0) key = 1;
   if (!key2 || parseInt(key2) == 0) key2 = 1;
-
   if (key > totalDigs) key = totalDigs;
 
   const [holeId, setHoleId] = useState(key);
@@ -41,13 +38,12 @@ export default function ArchivePage(props) {
     return fetchRabbitData(rabbitId);
   }, [rabbitId]);
 
+  const navigate = useNavigate();
   function handleEnterPress() {
-    /// if holeJump
     if (holeJump != holeId && holeJump > 0) {
       holeJumpFunc();
       return;
     }
-
     if (rabbitJump != depthIndex && depthIndex > 0) {
       rabbitJumpFunc();
       return;
@@ -61,6 +57,7 @@ export default function ArchivePage(props) {
       document.getElementById("hole-jump").value = newIndex;
     }
   }
+
   function rabbitJumpRight() {
     const newIndex = parseInt(rabbitJump ? rabbitJump : depthIndex) + 1;
     if (newIndex <= holeData.depth) {
@@ -264,8 +261,6 @@ const Wrapper = styled.div`
   gap: 1rem;
   height: 60%;
   border: none;
-
-  /*width:fit-content*/ /*text-align:center*/ /*margin:auto0*/
   user-select: none;
 
   :focus {
@@ -275,8 +270,6 @@ const Wrapper = styled.div`
   .holes,
   .rabbits {
     display: flex;
-    /* grid-template-columns: 1fr; */
-    /* gap: 0.5rem; */
     flex-direction: column;
     justify-content: space-between;
     text-align: left;
@@ -300,30 +293,15 @@ const Wrapper = styled.div`
     margin-top: auto;
     display: flex;
     justify-content: center;
-    /* grid-template-rows: 1fr; */
-    /* margin-left: auto; */
-    /* margin-right: 0.5rem; */
-
-    /* padding: 0.25rem; */
-
-    /* overflow: hidden; */
-    /* justify-content: ; */
-    /* flex-direction: column; */
   }
 
   .sel {
     border: none;
-    /* max-width: fit-content; */
     white-space: nowrap;
     background-color: rgba(0, 0, 0, 0);
     color: var(--lightGreen);
     overflow: hidden;
-    /* padding: 0 0.1rem; */
-    /* width: fit-content; */
-    /* min-width: 20px; */
-    /* width: clamp(5px, 4vw, 20px); */
     padding: 0.5rem;
-
     font-size: clamp(10px, 3vw, 20px);
 
     :hover {
@@ -333,9 +311,6 @@ const Wrapper = styled.div`
 
     &#burn {
       color: var(--limeGreen);
-      /* right: 0; */
-      /* margin-right: auto; */
-      /* margin-right: auto; */
 
       :hover {
         cursor: pointer;
@@ -399,7 +374,6 @@ const Wrapper = styled.div`
       margin-left: 0;
 
       input {
-        /* font-size: clamp(8px, 3vw, 13px); */
         font-size: 10px;
       }
     }

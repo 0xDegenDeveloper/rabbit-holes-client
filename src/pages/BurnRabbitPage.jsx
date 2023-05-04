@@ -1,58 +1,22 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCheck,
-  faDigging,
-  faFire,
-  faFireAlt,
-  faFireBurner,
-  faFireFlameCurved,
-  faFireFlameSimple,
-  faX,
-} from "@fortawesome/free-solid-svg-icons";
+import { faFireAlt } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-
+import { useState } from "react";
 import { stringToFelts } from "../components/utils/Utils";
 
 export default function BurnRabbitPage(props) {
   const { key } = useParams();
-  const [holeTitle, setHoleTitle] = useState(key ? key.toUpperCase() : "");
+  const holeTitle = key ? key.toUpperCase() : "";
+
   const [msg, setMsg] = useState("");
-
   const felts = stringToFelts(msg);
-
-  const [checkOne, setCheckOne] = useState(
-    holeTitle.length > 0 && holeTitle.length <= 31 ? true : false
-  );
-  const [checkTwo, setCheckTwo] = useState(true); // unique ?
-  const navigate = useNavigate();
 
   function handleBurning() {
     alert(
       "Thank you for your support, but our contracts are still under development!"
     );
-    // navigate(`/user`);
   }
-
-  //   function handleChecks() {
-  //     // setCheckOne(holeTitle.length > 0 && holeTitle.length <= 31 ? true : false);
-
-  //     if (
-  //       holeTitle == "JEFFERY EPSTEIN" ||
-  //       holeTitle == "BREATHWORK" ||
-  //       holeTitle == "CONSPIRACY THEORIES" ||
-  //       holeTitle == ""
-  //     ) {
-  //       setCheckOne(true);
-  //     } else {
-  //       setCheckOne(false);
-  //     }
-  //   }
-
-  //   useEffect(() => {
-  //     handleChecks();
-  //   }, [holeTitle]);
 
   if (holeTitle == "")
     return (
@@ -66,6 +30,7 @@ export default function BurnRabbitPage(props) {
         </div>
       </>
     );
+
   return (
     <>
       <div className="container">
@@ -82,7 +47,6 @@ export default function BurnRabbitPage(props) {
               }}
             ></textarea>
 
-            {/* <h5 style={{ color: "var(--limeGreen)" }}></h5> */}
             {!props.mobile && (
               <div className="felts">
                 {Array.isArray(felts) ? (
@@ -122,9 +86,6 @@ const Wrapper = styled.div`
   text-align: center;
   margin: auto 0;
   user-select: none;
-  /* place-content: center;
-  place-items: center; */
-  /* user-select: none; */
 
   em {
     color: var(--forrestGreen);
@@ -147,15 +108,13 @@ const Wrapper = styled.div`
   }
 
   .info {
-    /* width: ; */
     input,
     textarea {
-      /* margin: 1rem 0; */
       min-height: 100px;
       background-color: rgba(0, 0, 0, 0);
       border: none;
+      resize: vertical;
 
-      resize: vertical; /* Enable vertical resizing */
       ::placeholder {
         color: var(--greyGreen);
       }

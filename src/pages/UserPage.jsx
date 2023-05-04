@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
 import { useNavigate, useParams } from "react-router-dom";
-
 import UserSearchBar from "../components/UserSearchBar";
-
 import fetchUserData from "../components/hooks/fetchUserData";
 
 export default function UserPage(props) {
-  const { key, key2 } = useParams();
+  const { key } = useParams();
 
   const [isHoles, setIsHoles] = useState(true);
 
-  const [user, setUser] = useState(key ? key : "0x1234...abcd");
+  const user = key ? key : "0x1234...abcd";
 
   const navigate = useNavigate();
-
   const userData = fetchUserData(user);
 
   return (
@@ -23,7 +19,6 @@ export default function UserPage(props) {
       <div className="container">
         <Wrapper isHoles={isHoles}>
           <UserSearchBar user={user} />
-
           {isHoles && !key && (
             <div className="user-holes-section">
               <div className="outlined-box user-holes" id="clear-box">
@@ -31,7 +26,6 @@ export default function UserPage(props) {
                   <React.Fragment key={"hole" + index}>
                     <div
                       className="hole-link"
-                      // key={"hole" + index}
                       onClick={() => {
                         navigate(`/archive/${hole.id}`);
                       }}
@@ -56,7 +50,6 @@ export default function UserPage(props) {
                   <React.Fragment key={"rabbit" + index}>
                     <div
                       className="hole-link"
-                      // key={"rabbit" + index}
                       onClick={() => {
                         navigate(`/archive/${rabbit.hole_id}/${rabbit.id}`);
                       }}
@@ -75,7 +68,6 @@ export default function UserPage(props) {
                   </React.Fragment>
                 ))}
               </div>
-              {/* <div className="switcher one outlined-box-free-flex"></div> */}
             </div>
           )}
 
@@ -151,17 +143,12 @@ const Wrapper = styled.div`
   place-items: center;
   place-content: center;
   user-select: none;
-  /* width: clamp(100px, 30vw, 500px); */
   width: clamp(200px, 60%, 400px);
-
-  /* width: 100%; */
 
   .wrapper2 {
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 1rem;
-    /* width: 100%; */
-    /* padding-top: 1rem; */
 
     &:hover {
       cursor: default;
@@ -244,11 +231,6 @@ const Wrapper = styled.div`
     color: var(--limeGreen);
   }
 
-  .user-holes-section {
-    /* min-width: 300px; */
-    /* width: 100%; */
-  }
-
   .hole-link {
     padding: 1rem;
     &:hover {
@@ -275,25 +257,12 @@ const Wrapper = styled.div`
     gap: 0rem;
     margin: 0 auto;
     width: fit-content;
-
     margin-top: 1rem;
 
     color: var(--forrestGreen);
     em {
       color: var(--lightGreen);
     }
-  }
-
-  .user-holes:hover {
-  }
-
-  .user-holes::-webkit-scrollbar-thumb {
-    /* border-radius: 10px; */
-    /* height: 0; */
-    /* border-radius: inherit; */
-
-    background-color: var(--limeGreen);
-    color: var(--limeGreen);
   }
 `;
 

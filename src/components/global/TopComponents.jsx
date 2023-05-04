@@ -9,7 +9,6 @@ export default function TopComponents(props) {
 
   return (
     <div>
-      {/* <LoginBtn>0x1234...abcd</LoginBtn> */}
       <LoginButton
         mobile={props.mobile}
         walletShowing={walletShowing}

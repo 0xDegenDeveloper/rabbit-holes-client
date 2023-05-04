@@ -1,5 +1,4 @@
-/// function to convert string to felt here
-
+/// function to convert string to felt array/felt
 export function stringToFelts(str) {
   const chunkSize = 31;
   const utf8Encoder = new TextEncoder();

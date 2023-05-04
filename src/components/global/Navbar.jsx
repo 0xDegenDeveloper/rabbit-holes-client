@@ -9,8 +9,6 @@ import {
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import styled from "styled-components";
 
-// import Logo from "./Logo";
-
 export default function Navbar(props) {
   const location = useLocation();
 
@@ -25,6 +23,7 @@ export default function Navbar(props) {
       return `/user/`;
     }
   };
+
   return (
     <>
       <Nav>
@@ -32,16 +31,10 @@ export default function Navbar(props) {
           <NavLink to="/" icon={faSearch}></NavLink>
           <NavLink to="/stats" icon={faChartSimple}></NavLink>
           <NavLink to={handleArchiveClick()} icon={faEarthAmerica}></NavLink>
-
-          <NavLink
-            // to="/user"
-            icon={faCircleUser}
-            to={handleUserClick()}
-          ></NavLink>
+          <NavLink icon={faCircleUser} to={handleUserClick()}></NavLink>
           <NavLink to="/info" icon={faCircleInfo}></NavLink>
         </NavLinks>
       </Nav>
-      {/* <Logo /> */}
     </>
   );
 }
@@ -67,10 +60,8 @@ const Nav = styled.nav`
   align-items: left;
   font-size: clamp(7px, 3vw, 17px);
   position: fixed;
-  /* top: 0; */
   left: 0;
   bottom: 0;
-  /* height: 100vh; */
   border-radius: 1rem;
 `;
 
@@ -103,30 +94,16 @@ const NavLinksLi = styled.li`
   }
 
   @media only screen and (max-width: 760px) {
-    &.active {
-      /* padding-left: 0.1rem; */
-    }
     padding: 0.5rem;
-
-    /// neeed to do something here to fix mobile padding
-
-    /* padding: 0.5rem; */
   }
-
-  /* &:hover {
-    cursor: pointer;
-  } */
 `;
 
 const NavLinkEl = styled(Link)`
   text-decoration: none;
   color: var(--forrestGreen);
-
   &:hover {
-    /* padding-left: 0.5rem; */
     color: var(--greyGreen);
   }
-
   &.active {
     color: var(--greyGreen);
   }

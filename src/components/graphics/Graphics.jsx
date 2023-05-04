@@ -9,7 +9,6 @@ export default (props) => {
   };
 
   const setup = (p5, canvasParentRef) => {
-    // p5.frameRate(frameRate);
     p5.createCanvas(window.innerWidth, window.innerHeight).parent(
       canvasParentRef
     );
@@ -21,9 +20,6 @@ export default (props) => {
 
   const draw = (p5) => {
     p5.image(bg, 0, 0, p5.width, p5.height);
-
-    // if (!props.isTrail)
-    //   p5.image(imageTable[props.theme[3]].image, 0, 0, p5.width, p5.height);
   };
 
   return (
@@ -39,6 +35,5 @@ export default (props) => {
 const StyledSketch = styled(Sketch)`
   position: absolute;
   top: 0;
-  /* z-index: ${(props) => (props.fullScreen ? "100" : "1")}; */
   z-index: 1;
 `;

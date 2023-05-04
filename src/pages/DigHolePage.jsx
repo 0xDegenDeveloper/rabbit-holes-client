@@ -1,23 +1,20 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faDigging, faX } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-
 import { stringToFelts } from "../components/utils/Utils";
 
 export default function DigHolePage(props) {
   const { key } = useParams();
   const [holeTitle, setHoleTitle] = useState(key ? key : "");
-
-  const f = stringToFelts(holeTitle);
-  const felts = Array.isArray(f) ? f[0] : f;
-
   const [checkOne, setCheckOne] = useState(
     holeTitle.length > 0 && holeTitle.length <= 31 ? true : false
   );
-  const [checkTwo, setCheckTwo] = useState(true); // unique ?
-  const navigate = useNavigate();
+  const [checkTwo, setCheckTwo] = useState(true);
+
+  const f = stringToFelts(holeTitle);
+  const felts = Array.isArray(f) ? f[0] : f;
 
   function handleDigging() {
     console.log("trying to dig hole: ", holeTitle);
@@ -30,8 +27,6 @@ export default function DigHolePage(props) {
     alert(
       "Thank you for your support, but our contracts are still under development!"
     );
-
-    // navigate(`/user`);
   }
 
   function handleChecks() {
@@ -81,8 +76,6 @@ export default function DigHolePage(props) {
           </SearchBox>
           <div className="outlined-box info" id="info">
             <h1>Dig Check</h1>
-            {/* <h2>testing</h2>
-            <h3>testing</h3> */}
             <h4>
               Fits into a single felt252 ?{" "}
               <FontAwesomeIcon

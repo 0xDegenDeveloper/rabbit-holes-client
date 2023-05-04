@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   }
 `;
 
-export default function StatsPage(props) {
+export default function StatsPage() {
   return (
     <>
       <div className="container">
@@ -37,7 +37,6 @@ export default function StatsPage(props) {
           </div>
           <div className="outlined-boxx content">
             <h2>Depth</h2>
-
             <h4>
               Total Digs: <em>111</em>
             </h4>
