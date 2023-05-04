@@ -11,7 +11,10 @@ export default function fetchHoleData(holeId) {
   for (let rabbit in holeData.rabbits) {
     rabbitIds.push(parseInt(holeData.rabbits[rabbit].id));
   }
-  for (let i = 0; i < 11; i++) {
+
+  // r is a random int between 2 and 11
+  const r = Math.floor(Math.random() * 10) + 2;
+  for (let i = 0; i < r; i++) {
     rabbitIds.push(0);
   }
 

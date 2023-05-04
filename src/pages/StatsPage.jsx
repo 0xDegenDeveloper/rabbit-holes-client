@@ -9,11 +9,11 @@ const Wrapper = styled.div`
   h2 {
     color: var(--limeGreen);
     margin: 0.5rem 0 1rem;
-    font-size: clamp(12px, 5vw, 24px);
+    font-size: clamp(13px, 5vw, 20px);
   }
 
   h4 {
-    font-size: clamp(8px, 4vw, 14px);
+    font-size: clamp(7px, 4vw, 12px);
     margin: 0.5rem 0;
   }
 `;

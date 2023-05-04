@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
@@ -14,28 +14,45 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function ArchivePage(props) {
+  const totalDigs = 1111;
+
   const navigate = useNavigate();
   let { key, key2 } = useParams();
   if (!key || parseInt(key) == 0) key = 1;
   if (!key2 || parseInt(key2) == 0) key2 = 1;
 
+  if (key > totalDigs) key = totalDigs;
+
   const [holeId, setHoleId] = useState(key);
   const [holeJump, setHoleJump] = useState(key);
+  const holeData = useMemo(() => {
+    return fetchHoleData(holeId);
+  }, [holeId]);
+
+  if (key2 > holeData.depth) key2 = holeData.depth;
+
   const [rabbitJump, setRabbitJump] = useState(key2);
   const [depthIndex, setDepthIndex] = useState(key2);
 
   //   const [rabbitId, setRabbitId] = useState(key2);
 
-  const totalDigs = 1111;
-
-  const holeData = useMemo(() => {
-    return fetchHoleData(holeId);
-  }, [holeId]);
-
   const rabbitId = holeData.rabbitIds[depthIndex - 1];
   const rabbitData = useMemo(() => {
     return fetchRabbitData(rabbitId);
   }, [rabbitId]);
+
+  function handleEnterPress() {
+    /// if holeJump
+    if (holeJump != holeId && holeJump > 0) {
+      holeJumpFunc();
+      return;
+    }
+
+    if (rabbitJump != depthIndex && depthIndex > 0) {
+      rabbitJumpFunc();
+      return;
+    }
+  }
 
   function holeJumpRight() {
     const newIndex = parseInt(holeJump ? holeJump : holeId) + 1;
@@ -84,10 +101,24 @@ export default function ArchivePage(props) {
     }
   }
 
+  function handleInput(e) {
+    const pattern = e.target.getAttribute("pattern");
+    const regex = new RegExp(`^${pattern}$`);
+    if (!regex.test(e.target.value) && e.target.value !== "") {
+      e.target.value = e.target.value.slice(0, -1);
+    }
+  }
+
   return (
     <>
       <div className="container">
-        <Wrapper className="outlined-boxxx">
+        <Wrapper
+          className="outlined-boxxx"
+          tabIndex="0"
+          onKeyDown={(e) => {
+            if (e.key == "Enter") handleEnterPress();
+          }}
+        >
           <div className="holes">
             <div className="hole">
               <h4>
@@ -106,20 +137,18 @@ export default function ArchivePage(props) {
             <div className="sels">
               <input
                 className="hole-jump"
+                pattern="\d*"
+                onInput={handleInput}
                 value={holeJump}
                 type="number"
                 min={1}
-                // inputMode="number"
+                inputMode="number"
                 max={totalDigs}
                 id="hole-jump"
                 style={inputStyle(parseInt(holeId) == parseInt(holeJump))}
                 onChange={(e) => {
                   setHoleJump(e.target.value);
                 }}
-                onKeyDown={(e) => {
-                  if (e.key == "Enter") holeJumpFunc();
-                }}
-                // size={calculateSize(holeJump)}
               ></input>
               <div
                 className="sel outlined-box-free-flex"
@@ -169,20 +198,18 @@ export default function ArchivePage(props) {
             <div className="sels">
               <input
                 className="rabbit-jump"
+                pattern="\d*"
+                onInput={handleInput}
                 value={rabbitJump}
                 type="number"
                 min={1}
                 max={holeData.depth}
-                // inputMode="none"
+                inputMode="number"
                 id="rabbit-jump"
                 style={inputStyle(parseInt(depthIndex) == parseInt(rabbitJump))}
                 onChange={(e) => {
                   setRabbitJump(e.target.value);
                 }}
-                onKeyDown={(e) => {
-                  if (e.key == "Enter") rabbitJumpFunc();
-                }}
-                // size={calculateSize(holeJump)}
               ></input>
               <div
                 className="sel outlined-box-free-flex"
@@ -200,7 +227,6 @@ export default function ArchivePage(props) {
               >
                 <FontAwesomeIcon icon={faCircleArrowRight} />
               </div>
-
               <div
                 className={`sel jump-sel outlined-box-free-flex ${
                   parseInt(depthIndex) == parseInt(rabbitJump)
@@ -232,16 +258,19 @@ export default function ArchivePage(props) {
 
 const Wrapper = styled.div`
   border: none;
-  /* margin-top: 10vh; */
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto auto 1fr;
   gap: 1rem;
-  max-height: 60%;
+  height: 60%;
   border: none;
 
   /*width:fit-content*/ /*text-align:center*/ /*margin:auto0*/
   user-select: none;
+
+  :focus {
+    outline: none;
+  }
 
   .holes,
   .rabbits {

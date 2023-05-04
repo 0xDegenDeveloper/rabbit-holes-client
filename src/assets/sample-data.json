@@ -22,6 +22,12 @@
         "burner": "Bob.eth",
         "id": "1",
         "timestamp": "4/20/2023"
+      },
+      {
+        "msg": "We're all really just a clump of atoms aware of their own existence.",
+        "id": "8",
+        "burner": "0x1234...abcd",
+        "timestamp": "1/5/23"
       }
     ]
   },
@@ -50,10 +56,22 @@
     "timestamp": "1/1/23",
     "rabbits": [
       {
-        "msg": "I started doing wim hoff everyday and life started getting trippy",
+        "msg": "I started doing breathwork everyday and life started getting trippy",
         "id": "4",
         "burner": "0x1234...abcd",
-        "timestamp": "4/20/23"
+        "timestamp": "1/1/23"
+      },
+      {
+        "msg": "Day 45: I could see myself doing this everyday",
+        "id": "51",
+        "burner": "0x1234...abcd",
+        "timestamp": "2/15/23"
+      },
+      {
+        "msg": "Day 123: Breathwork make body go brrrr",
+        "id": "130",
+        "burner": "0x1234...abcd",
+        "timestamp": "5/4/23"
       }
     ]
   },

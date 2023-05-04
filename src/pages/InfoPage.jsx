@@ -48,6 +48,10 @@ export default function InfoPage(props) {
               </a>
             </h4>
           </div>
+
+          <div className="token-logo">
+            <img src="/logo3.png" />
+          </div>
         </Wrapper>
       </div>
     </>
@@ -61,6 +65,43 @@ const Wrapper = styled.div`
   gap: 1rem;
   height: 60%;
   user-select: none;
+
+  .token-logo {
+    margin-top: 1rem;
+    display: grid;
+    place-items: center;
+    /* width: clamp(150px, 30vw, 300px); */
+
+    img {
+      width: clamp(50px, 30vw, 100px);
+
+      :hover {
+        cursor: pointer;
+        animation: rotate360 4s infinite ease-in-out;
+      }
+    }
+
+    @keyframes rotate360 {
+      /* to {
+      transform: rotate(360deg);
+    } */
+      0% {
+        transform: rotate(0deg);
+      }
+      50%,
+      52% {
+        transform: rotate(720deg);
+      }
+      /* 50%,
+    55% {
+      transform: rotate(-720deg);
+    } */
+      75%,
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  }
 
   h1 {
     font-size: clamp(14px, 2vw, 24px);
