@@ -24,25 +24,6 @@ export default function UserPage(props) {
         <Wrapper isHoles={isHoles}>
           <UserSearchBar user={user} />
 
-          <div className="wrapper3">
-            <h1
-              onClick={() => {
-                setIsHoles(true);
-              }}
-              className={`a sel ${isHoles ? "active" : ""}`}
-            >
-              Holes
-            </h1>
-            <VBar />
-            <h1
-              onClick={() => {
-                setIsHoles(false);
-              }}
-              className={`b sel ${isHoles ? "" : "active"}`}
-            >
-              Rabbits
-            </h1>
-          </div>
           {isHoles && !key && (
             <div className="user-holes-section">
               <div className="outlined-box user-holes">
@@ -106,7 +87,25 @@ export default function UserPage(props) {
               </div>
             </div>
           )}
-
+          <div className="wrapper3">
+            <h1
+              onClick={() => {
+                setIsHoles(true);
+              }}
+              className={`a sel ${isHoles ? "active" : ""}`}
+            >
+              Holes
+            </h1>
+            <VBar />
+            <h1
+              onClick={() => {
+                setIsHoles(false);
+              }}
+              className={`b sel ${isHoles ? "" : "active"}`}
+            >
+              Rabbits
+            </h1>
+          </div>
           <div className="wrapper2">
             <div className="outlined-box-free-flex-3 stat">
               <h4>
@@ -156,7 +155,7 @@ const Wrapper = styled.div`
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 1rem;
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
 
     &:hover {
       cursor: default;
@@ -165,6 +164,10 @@ const Wrapper = styled.div`
 
   .sel {
     color: var(--forrestGreen);
+
+    h1 {
+      margin: 0;
+    }
   }
 
   .active {
@@ -184,6 +187,7 @@ const Wrapper = styled.div`
     grid-template-columns: auto auto auto;
     gap: 0.5rem;
     font-size: clamp(9px, 3vw, 14px);
+    height: fit-content;
 
     .a {
       margin-left: auto;
@@ -194,6 +198,10 @@ const Wrapper = styled.div`
 
     h1:hover {
       cursor: pointer;
+    }
+
+    h1 {
+      margin: 0.5rem;
     }
   }
 
@@ -253,6 +261,8 @@ const Wrapper = styled.div`
     display: grid;
     grid-template-columns: auto;
     gap: 0rem;
+
+    margin-top: 1rem;
 
     color: var(--forrestGreen);
     em {

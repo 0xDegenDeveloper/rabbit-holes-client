@@ -150,6 +150,7 @@ const Wrapper = styled.div`
 
   .info {
     margin: 0 auto;
+    font-size: clamp(6px, 2vw, 10px);
   }
 
   .info h1 {
@@ -172,7 +173,7 @@ const SearchBox = styled.div`
   font-size: clamp(25px, 4vw, 50px);
   align-items: center;
   border-radius: 2rem;
-  padding: 1rem;
+  padding: 0.3rem 1rem;
   border: 3px solid var(--forrestGreen);
   background-color: var(--forrestGreen);
   color: var(--limeGreen);
@@ -204,7 +205,8 @@ const SearchBar = styled.input`
 
 const SearchBtn = styled.div`
   color: var(--limeGreen);
-  font-size: 1.5rem;
+  font-size: clamp(15px, 4vw, 20px);
+
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   margin-left: auto;

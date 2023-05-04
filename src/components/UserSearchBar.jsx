@@ -46,7 +46,7 @@ const SearchBox = styled.div`
   align-items: center;
 
   border-radius: 2rem;
-  padding: 1rem;
+  padding: 0.5rem;
   border: 3px solid var(--forrestGreen);
   background-color: var(--forrestGreen);
   color: var(--limeGreen);
@@ -55,12 +55,13 @@ const SearchBox = styled.div`
 `;
 
 const SearchBar = styled.input`
-  padding: 0.5rem 0;
+  /* padding: 0.5rem 0; */
   border: none;
   background-color: rgba(0, 0, 0, 0);
   color: var(--lightGreen);
   width: clamp(150px, 40vw, 500px);
   font-family: "Andale Mono", monospace;
+  font-size: clamp(6px, 2vw, 10px);
 
   ::placeholder {
     color: var(--limeGreen);
@@ -75,6 +76,7 @@ const SearchBtn = styled.div`
   color: var(--limeGreen);
   font-size: 1.5rem;
   padding-right: 0.5rem;
+  font-size: clamp(15px, 4vw, 20px);
 
   :hover {
     cursor: pointer;
