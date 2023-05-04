@@ -167,17 +167,8 @@ export default function ArchivePage(props) {
               </h4>
             </div>
             <div className="sels">
-              <div
-                className="sel outlined-box-free-flex"
-                id="burn"
-                onClick={() => {
-                  navigate(`/burn-rabbit/${holeData.title}`);
-                }}
-              >
-                <FontAwesomeIcon icon={faFireAlt} />
-              </div>
               <input
-                className="sel rabbit-jump"
+                className="rabbit-jump"
                 value={rabbitJump}
                 type="number"
                 min={1}
@@ -221,6 +212,15 @@ export default function ArchivePage(props) {
                 }}
               >
                 <FontAwesomeIcon icon={faArrowsToCircle} />
+              </div>
+              <div
+                className="sel outlined-box-free-flex"
+                id="burn"
+                onClick={() => {
+                  navigate(`/burn-rabbit/${holeData.title}`);
+                }}
+              >
+                <FontAwesomeIcon icon={faFireAlt} />
               </div>
             </div>
           </div>
@@ -292,7 +292,7 @@ const Wrapper = styled.div`
     /* padding: 0 0.1rem; */
     /* width: fit-content; */
     /* min-width: 20px; */
-    width: clamp(5px, 4vw, 20px);
+    /* width: clamp(5px, 4vw, 20px); */
     padding: 0.5rem;
 
     font-size: clamp(10px, 3vw, 20px);
@@ -304,7 +304,9 @@ const Wrapper = styled.div`
 
     &#burn {
       color: var(--limeGreen);
-      margin-right: auto;
+      /* right: 0; */
+      /* margin-right: auto; */
+      /* margin-right: auto; */
 
       :hover {
         cursor: pointer;
