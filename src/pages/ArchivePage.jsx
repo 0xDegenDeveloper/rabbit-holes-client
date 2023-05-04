@@ -109,7 +109,7 @@ export default function ArchivePage(props) {
                 value={holeJump}
                 type="number"
                 min={1}
-                inputMode="none"
+                // inputMode="number"
                 max={totalDigs}
                 id="hole-jump"
                 style={inputStyle(parseInt(holeId) == parseInt(holeJump))}
@@ -173,7 +173,7 @@ export default function ArchivePage(props) {
                 type="number"
                 min={1}
                 max={holeData.depth}
-                inputMode="none"
+                // inputMode="none"
                 id="rabbit-jump"
                 style={inputStyle(parseInt(depthIndex) == parseInt(rabbitJump))}
                 onChange={(e) => {
