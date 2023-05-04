@@ -105,10 +105,11 @@ export default function ArchivePage(props) {
             </div>
             <div className="sels">
               <input
-                className="sel hole-jump"
+                className="hole-jump"
                 value={holeJump}
                 type="number"
                 min={1}
+                inputMode="none"
                 max={totalDigs}
                 id="hole-jump"
                 style={inputStyle(parseInt(holeId) == parseInt(holeJump))}
@@ -167,7 +168,8 @@ export default function ArchivePage(props) {
             </div>
             <div className="sels">
               <div
-                className="sel burn outlined-box-free-flex"
+                className="sel outlined-box-free-flex"
+                id="burn"
                 onClick={() => {
                   navigate(`/burn-rabbit/${holeData.title}`);
                 }}
@@ -180,6 +182,7 @@ export default function ArchivePage(props) {
                 type="number"
                 min={1}
                 max={holeData.depth}
+                inputMode="none"
                 id="rabbit-jump"
                 style={inputStyle(parseInt(depthIndex) == parseInt(rabbitJump))}
                 onChange={(e) => {
@@ -250,6 +253,7 @@ const Wrapper = styled.div`
     text-align: left;
     h4 {
       margin: 0.5rem;
+      font-size: clamp(9px, 3vw, 15px);
     }
   }
 
@@ -263,24 +267,12 @@ const Wrapper = styled.div`
     overflow-y: scroll;
   }
 
-  input {
-    :focus {
-      outline: none;
-    }
-    ::placeholder {
-      color: var(--lightGreen);
-    }
-    background-color: rgba(0, 0, 0, 0);
-    width: 100%;
-    color: var(--lightGreen);
-    text-align: right;
-  }
-
   .sels {
     margin-top: auto;
     display: flex;
     justify-content: center;
-    margin-left: auto;
+    /* grid-template-rows: 1fr; */
+    /* margin-left: auto; */
     /* margin-right: 0.5rem; */
 
     /* padding: 0.25rem; */
@@ -297,16 +289,22 @@ const Wrapper = styled.div`
     background-color: rgba(0, 0, 0, 0);
     color: var(--lightGreen);
     overflow: hidden;
+    /* padding: 0 0.1rem; */
+    /* width: fit-content; */
+    /* min-width: 20px; */
+    width: clamp(5px, 4vw, 20px);
     padding: 0.5rem;
-    width: fit-content;
+
+    font-size: clamp(10px, 3vw, 20px);
 
     :hover {
       cursor: pointer;
       color: var(--limeGreen);
     }
 
-    &.burn {
+    &#burn {
       color: var(--limeGreen);
+      margin-right: auto;
 
       :hover {
         cursor: pointer;
@@ -335,9 +333,45 @@ const Wrapper = styled.div`
     }
   }
 
+  .hole-jump,
+  .rabbit-jump {
+    font-size: clamp(2px, 2vw, 16px);
+    border: none;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input {
+    :focus {
+      outline: none;
+    }
+    ::placeholder {
+      color: var(--lightGreen);
+    }
+
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    color: var(--lightGreen);
+    text-align: right;
+  }
+
   width: clamp(400px, 40vw, 500px);
   @media only screen and (max-width: 760px) {
     width: 55%;
+
+    padding: 0.5rem;
+
+    .sels {
+      margin-left: 0;
+
+      input {
+        /* font-size: clamp(8px, 3vw, 13px); */
+        font-size: 10px;
+      }
+    }
   }
 `;
 
