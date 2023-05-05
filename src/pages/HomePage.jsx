@@ -28,7 +28,7 @@ export default function HomePage() {
   return (
     <>
       <div className="container">
-        <SearchBox>
+        {/* <SearchBox>
           <SearchBar
             placeholder="Enter the RabbitHole..."
             onChange={(event) => setTheInput(event.target.value)}
@@ -46,59 +46,30 @@ export default function HomePage() {
               }}
             ></FontAwesomeIcon>
           </SearchBtn>
-        </SearchBox>
+        </SearchBox> */}
+        <div className="dark-search-bar">
+          <input
+            className="dark-search-bar-input"
+            placeholder="Enter the RabbitHole..."
+            onChange={(event) => setTheInput(event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key == "Enter") {
+                passInput();
+              }
+            }}
+          ></input>
+          <div
+            className={`dark-search-bar-button ${input == "" ? "one" : "two"}`}
+          >
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              onClick={() => {
+                passInput();
+              }}
+            ></FontAwesomeIcon>
+          </div>
+        </div>
       </div>
     </>
   );
 }
-
-const SearchBox = styled.div`
-  display: flex;
-  gap: 1rem;
-  font-size: clamp(25px, 4vw, 50px);
-  align-items: center;
-  border-radius: 2rem;
-  border: 3px solid var(--forrestGreen);
-  background-color: var(--forrestGreen);
-  color: var(--lightGreen);
-  box-shadow: 0px 0px 5px 0px var(--forrestGreen);
-`;
-
-const SearchBar = styled.input`
-  border-radius: 2rem;
-  padding: 0.5rem;
-  border: 3px solid var(--forrestGreen);
-  background-color: rgba(0, 0, 0, 0);
-  color: var(--lightGreen);
-  text-transform: uppercase;
-  width: clamp(100px, 35vw, 500px);
-  font-family: "Andale Mono", monospace;
-  font-size: clamp(6px, 2vw, 10px);
-
-  ::placeholder {
-    color: var(--limeGreen);
-  }
-
-  :focus {
-    outline: none;
-  }
-`;
-
-const SearchBtn = styled.div`
-  font-size: clamp(15px, 4vw, 20px);
-  padding: 0.5rem;
-  padding-right: 1rem;
-
-  &.one {
-    color: var(--forrestGreen);
-  }
-
-  &.two {
-    color: var(--limeGreen);
-  }
-
-  :hover {
-    cursor: pointer;
-    color: var(--lightGreen);
-  }
-`;

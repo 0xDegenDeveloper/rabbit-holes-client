@@ -1,7 +1,12 @@
-import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import {
+  faMagnifyingGlass,
+  faUser,
+  faUserAlt,
+  faUserAltSlash,
+  faUserAstronaut,
+} from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function UserSearchBar(props) {
@@ -14,10 +19,16 @@ export default function UserSearchBar(props) {
     navigate(`/user/${input}`);
   }
 
+  useEffect(() => {
+    document.getElementById("search-input").placeholder = props.user;
+  }, [props.user]);
+
   return (
     <>
-      <SearchBox>
-        <SearchBar
+      <div className="dark-search-bar">
+        <input
+          className="dark-search-bar-input"
+          id="search-input"
           placeholder={props.user == addr ? "Discorver users..." : props.user}
           onChange={(event) => setInput(event.target.value)}
           onKeyDown={(event) => {
@@ -25,61 +36,16 @@ export default function UserSearchBar(props) {
               passInput();
             }
           }}
-        ></SearchBar>
-        <SearchBtn id="h">
+        ></input>
+        <div id="h" className={`dark-search-bar-button ${"two"}`}>
           <FontAwesomeIcon
-            icon={faMagnifyingGlass}
+            icon={faUserAstronaut}
             onClick={() => {
               passInput();
             }}
           ></FontAwesomeIcon>
-        </SearchBtn>
-      </SearchBox>
+        </div>
+      </div>
     </>
   );
 }
-
-const SearchBox = styled.div`
-  display: flex;
-  gap: 1rem;
-  font-size: clamp(25px, 4vw, 50px);
-  align-items: center;
-
-  border-radius: 2rem;
-  padding: 0.5rem;
-  border: 3px solid var(--forrestGreen);
-  background-color: var(--forrestGreen);
-  color: var(--limeGreen);
-  font-family: "Andale Mono", monospace;
-  box-shadow: 0px 0px 5px 0px var(--forrestGreen);
-`;
-
-const SearchBar = styled.input`
-  /* padding: 0.5rem 0; */
-  border: none;
-  background-color: rgba(0, 0, 0, 0);
-  color: var(--lightGreen);
-  width: clamp(150px, 40vw, 500px);
-  font-family: "Andale Mono", monospace;
-  font-size: clamp(6px, 2vw, 10px);
-
-  ::placeholder {
-    color: var(--limeGreen);
-  }
-
-  :focus {
-    outline: none;
-  }
-`;
-
-const SearchBtn = styled.div`
-  color: var(--limeGreen);
-  font-size: 1.5rem;
-  padding-right: 0.5rem;
-  font-size: clamp(15px, 4vw, 20px);
-
-  :hover {
-    cursor: pointer;
-    color: var(--lightGreen);
-  }
-`;

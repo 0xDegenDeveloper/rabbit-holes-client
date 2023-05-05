@@ -19,9 +19,10 @@ export default function UserPage(props) {
       <div className="container">
         <Wrapper isHoles={isHoles}>
           <UserSearchBar user={user} />
+          {/* DEMO USER H OR R */}
           {isHoles && !key && (
             <div className="user-holes-section">
-              <div className="outlined-box user-holes" id="clear-box">
+              <div className="clear-box-dark-border user-holes" id="clear-box">
                 {userData.holes.map((hole, index) => (
                   <React.Fragment key={"hole" + index}>
                     <div
@@ -45,7 +46,7 @@ export default function UserPage(props) {
           )}
           {!isHoles && !key && (
             <div className="user-holes-section">
-              <div className="outlined-box user-holes" id="clear-box">
+              <div className="clear-box-dark-border user-holes" id="clear-box">
                 {userData.rabbits.map((rabbit, index) => (
                   <React.Fragment key={"rabbit" + index}>
                     <div
@@ -70,12 +71,23 @@ export default function UserPage(props) {
               </div>
             </div>
           )}
-
+          {/* NO USER */}
           {key && (
             <div className="user-holes-section">
-              <div className="outlined-box user-holes">
-                <div className="hole-link"></div>
+              <div className="clear-box-dark-border user-holes">
+                <div
+                  className="hole-link"
+                  onClick={() => {
+                    navigate(`/archive/1`);
+                  }}
+                ></div>
                 <Bar />
+                <div
+                  className="hole-link"
+                  onClick={() => {
+                    navigate(`/archive/1`);
+                  }}
+                ></div>
               </div>
             </div>
           )}
@@ -99,18 +111,33 @@ export default function UserPage(props) {
             </h1>
           </div>
           <div className="wrapper2">
-            <div className="outlined-box-free-flex-3 stat">
+            <div
+              className="dark-button-small stat"
+              onClick={() => {
+                setIsHoles(true);
+              }}
+            >
               <h4>
                 Digs: <em>{key ? 0 : userData.holes.length}</em>
               </h4>
             </div>
 
-            <div className="outlined-box-free-flex-3 stat">
+            <div
+              className="dark-button-small stat"
+              onClick={() => {
+                setIsHoles(false);
+              }}
+            >
               <h4>
                 Burns: <em>{key ? 0 : userData.rabbits.length}</em>
               </h4>
             </div>
-            <div className="outlined-box-free-flex-3 stat tt">
+            <div
+              className="dark-button-small stat tt"
+              onClick={() => {
+                navigate(`/info/`);
+              }}
+            >
               <h4>
                 Balance:{" "}
                 <em>

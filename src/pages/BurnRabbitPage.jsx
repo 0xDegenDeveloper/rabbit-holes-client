@@ -22,7 +22,7 @@ export default function BurnRabbitPage(props) {
     return (
       <>
         <div className="container">
-          <div className="outlined-boxx info">
+          <div className="dark-box-600w info">
             <h2 style={{ color: "var(--limeGreen)" }}>
               Oops that hole isn't dug yet
             </h2>
@@ -35,7 +35,7 @@ export default function BurnRabbitPage(props) {
     <>
       <div className="container">
         <Wrapper>
-          <div className="outlined-boxx info">
+          <div className="dark-box-600w info">
             <h2>Hole: "{holeTitle}"</h2>
             <textarea
               placeholder={"burn a rabbit..."}

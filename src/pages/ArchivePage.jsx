@@ -110,7 +110,8 @@ export default function ArchivePage() {
     <>
       <div className="container">
         <Wrapper
-          className="outlined-boxxx"
+          // className="outlined-boxx"
+          className="dark-box-600w box"
           tabIndex="0"
           onKeyDown={(e) => {
             if (e.key == "Enter") handleEnterPress();

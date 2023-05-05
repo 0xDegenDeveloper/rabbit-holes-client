@@ -53,8 +53,9 @@ export default function DigHolePage(props) {
     <>
       <div className="container">
         <Wrapper>
-          <SearchBox>
-            <SearchBar
+          <div className="dark-search-bar">
+            <input
+              className="dark-search-bar-input"
               placeholder={holeTitle == "" ? "Dig a hole..." : holeTitle}
               onChange={(event) =>
                 setHoleTitle(event.target.value.toUpperCase())
@@ -64,17 +65,22 @@ export default function DigHolePage(props) {
                   handleDigging();
                 }
               }}
-            ></SearchBar>
-            <SearchBtn id="h">
+            ></input>
+            <div
+              className={`dark-search-bar-button ${
+                holeTitle == "" ? "one" : "two"
+              }`}
+              id="h"
+            >
               <FontAwesomeIcon
                 icon={faDigging}
                 onClick={() => {
                   handleDigging();
                 }}
               ></FontAwesomeIcon>
-            </SearchBtn>
-          </SearchBox>
-          <div className="outlined-box info" id="info">
+            </div>
+          </div>
+          <div className="clear-box-dark-border info" id="info">
             <h1>Dig Check</h1>
             <h4>
               Fits into a single felt252 ?{" "}
@@ -157,7 +163,7 @@ const Wrapper = styled.div`
     :focus {
       outline: none;
     }
-    width: 100%;
+    /* width: 100%; */
   }
 `;
 
