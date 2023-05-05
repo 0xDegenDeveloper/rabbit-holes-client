@@ -24,7 +24,7 @@ export default function BurnRabbitPage(props) {
         <div className="container">
           <div className="dark-box-600w info">
             <h2 style={{ color: "var(--limeGreen)" }}>
-              Oops that hole isn't dug yet
+              &gt; Oops that hole isn't dug yet
             </h2>
           </div>
         </div>

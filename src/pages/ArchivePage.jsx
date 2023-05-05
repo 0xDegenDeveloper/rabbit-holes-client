@@ -120,16 +120,16 @@ export default function ArchivePage() {
           <div className="holes">
             <div className="hole">
               <h4>
-                hole #{holeId}: <em>"{holeData.title}"</em>
+                &gt; Hole #{holeId}: <em>"{holeData.title}"</em>
               </h4>
               <h4>
-                digger: <em>{holeData.digger}</em>
+                &gt; Digger: <em>{holeData.digger}</em>
               </h4>
               <h4>
-                timestamp: <em>{holeData.timestamp}</em>
+                &gt; Timestamp: <em>{holeData.timestamp}</em>
               </h4>
               <h4>
-                depth: <em>{holeData.depth}</em>
+                &gt; Depth: <em>{holeData.depth}</em>
               </h4>
             </div>
             <div className="sels">
@@ -181,16 +181,16 @@ export default function ArchivePage() {
           <div className="rabbits">
             <div className="rabbit">
               <h4>
-                rabbit <em>#{rabbitId}</em>
+                &gt; Rabbit <em>#{rabbitId}</em>
               </h4>
               <h4>
-                burner: <em>{rabbitData.burner}</em>
+                &gt; Burner: <em>{rabbitData.burner}</em>
               </h4>
               <h4>
-                timestamp: <em>{rabbitData.timestamp}</em>
+                &gt; Timestamp: <em>{rabbitData.timestamp}</em>
               </h4>
               <h4>
-                msg: <em>{rabbitData.msg}</em>
+                &gt; Msg: <em>{rabbitData.msg}</em>
               </h4>
             </div>
             <div className="sels">
