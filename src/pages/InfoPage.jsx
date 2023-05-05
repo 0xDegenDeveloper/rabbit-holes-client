@@ -29,19 +29,19 @@ export default function InfoPage() {
             </h5> */}
               <h4>
                 - A hole's title must fit into a single <em>felt252</em> (31
-                characters or less)
+                characters or less).
               </h4>
               <h3 style={{ color: "var(--limeGreen)" }}>::Rabbits</h3>
               <h4>
                 - A rabbit's message will fill consecutive slots in a global
-                LegacyMap(<em>u64</em>, <em>felt252</em>)
+                LegacyMap(<em>u64</em> =&gt; <em>felt252</em>).
               </h4>
               <h4>
-                - To burn a rabbit, users will need to burn some of their RBITS
+                - To burn a rabbit, users will need to burn some of their RBITS.
               </h4>
               <h4>
                 - For every <em>felt252</em> slot filled by a rabbit's message,
-                1.0 RBIT will be burned
+                1.0 RBIT will be burned.
               </h4>
             </div>
             <div className="section-three">
