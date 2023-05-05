@@ -16,8 +16,6 @@ export default function InfoPage() {
             </h4>
             <h4>Digging a hole creates a discussion topic.</h4>
             <h4>Burning a rabbit adds a message to the discussion.</h4>
-          </div>
-          <div className="outlined-boxxx box">
             <h1>Mechanics</h1>
             <h4>
               <em>Holes:</em>
@@ -30,7 +28,6 @@ export default function InfoPage() {
             <h4>
               -Every rabbit a user burns will burn 1.0 of their RBITS (burn fee)
             </h4>
-
             <h4>
               <em>Further:</em>
             </h4>
@@ -47,6 +44,7 @@ export default function InfoPage() {
           <div className="token-logo">
             <img src="/logo.png" />
           </div>
+          {/* <div className="outlined-boxxx box"></div> */}
         </Wrapper>
       </div>
     </>
