@@ -32,10 +32,10 @@ export default function UserPage(props) {
                       }}
                     >
                       <h4>
-                        Hole #{hole.id} <em>"{hole.title}"</em>
+                        &gt; Hole #{hole.id} <em>"{hole.title}"</em>
                       </h4>
                       <h4>
-                        Depth: <em>{hole.depth}</em>
+                        &gt; Depth: <em>{hole.depth}</em>
                       </h4>
                     </div>
                     <Bar />
@@ -56,13 +56,13 @@ export default function UserPage(props) {
                       }}
                     >
                       <h4>
-                        Rabbit <em>#{rabbit.global_id}</em>
+                        &gt; Rabbit <em>#{rabbit.global_id}</em>
                       </h4>
                       <h4>
-                        Hole :<em>"{rabbit.title}"</em>
+                        &gt; Hole :<em>"{rabbit.title}"</em>
                       </h4>
                       <h4>
-                        Message: <em>{rabbit.msg}</em>
+                        &gt; Msg: <em>{rabbit.msg}</em>
                       </h4>
                     </div>
                     <Bar />
@@ -80,14 +80,18 @@ export default function UserPage(props) {
                   onClick={() => {
                     navigate(`/archive/1`);
                   }}
-                ></div>
+                >
+                  &gt;
+                </div>
                 <Bar />
                 <div
                   className="hole-link"
                   onClick={() => {
                     navigate(`/archive/1`);
                   }}
-                ></div>
+                >
+                  &gt;
+                </div>
               </div>
             </div>
           )}

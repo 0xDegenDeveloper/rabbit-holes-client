@@ -83,7 +83,7 @@ export default function DigHolePage(props) {
           <div className="clear-box-dark-border info" id="info">
             <h1>Dig Check</h1>
             <h4>
-              Fits into a single felt252 ?{" "}
+              &gt; Fits into a single felt252 ?{" "}
               <FontAwesomeIcon
                 icon={checkOne ? faCheck : faX}
                 style={
@@ -96,7 +96,7 @@ export default function DigHolePage(props) {
               />
             </h4>
             <h4>
-              Unique title ?{" "}
+              &gt; Unique title ?{" "}
               <FontAwesomeIcon
                 icon={checkTwo ? faCheck : faX}
                 style={

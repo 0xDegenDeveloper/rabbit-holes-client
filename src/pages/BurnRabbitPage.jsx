@@ -36,7 +36,7 @@ export default function BurnRabbitPage(props) {
       <div className="container">
         <Wrapper>
           <div className="dark-box-600w info">
-            <h2>Hole: "{holeTitle}"</h2>
+            <h2>&gt; Hole: "{holeTitle}"</h2>
             <textarea
               placeholder={"burn a rabbit..."}
               onChange={(event) => setMsg(event.target.value)}
