@@ -15,10 +15,14 @@ import styled from "styled-components";
 export default function ArchivePage() {
   const totalDigs = 1111;
   let { key, key2 } = useParams();
+  const navigate = useNavigate();
 
   if (!key || parseInt(key) == 0) key = 1;
   if (!key2 || parseInt(key2) == 0) key2 = 1;
-  if (key > totalDigs) key = totalDigs;
+  if (key > totalDigs) {
+    key = totalDigs;
+    // navigate(`/archive/1111/1`);
+  }
 
   const [holeId, setHoleId] = useState(key);
   const [holeJump, setHoleJump] = useState(key);
@@ -38,7 +42,6 @@ export default function ArchivePage() {
     return fetchRabbitData(rabbitId);
   }, [rabbitId]);
 
-  const navigate = useNavigate();
   function handleEnterPress() {
     if (holeJump != holeId && holeJump > 0) {
       holeJumpFunc();
@@ -92,7 +95,11 @@ export default function ArchivePage() {
   }
 
   function rabbitJumpFunc() {
-    if (rabbitJump != depthIndex && depthIndex > 0) {
+    if (
+      rabbitJump != depthIndex &&
+      depthIndex > 0 &&
+      rabbitJump <= holeData.depth
+    ) {
       setDepthIndex(rabbitJump);
       navigate(`/archive/${holeJump}/${rabbitJump}`);
     }
@@ -166,7 +173,9 @@ export default function ArchivePage() {
               </div>
               <div
                 className={`sel jump-sel outlined-box-free-flex ${
-                  parseInt(holeId) == parseInt(holeJump) ? "inactive" : "active"
+                  parseInt(holeId) == parseInt(holeJump) || holeJump > totalDigs
+                    ? "inactive"
+                    : "active"
                 }`}
                 onClick={() => {
                   holeJumpFunc();
@@ -227,7 +236,8 @@ export default function ArchivePage() {
               </div>
               <div
                 className={`sel jump-sel outlined-box-free-flex ${
-                  parseInt(depthIndex) == parseInt(rabbitJump)
+                  parseInt(depthIndex) == parseInt(rabbitJump) ||
+                  rabbitJump > holeData.depth
                     ? "inactive"
                     : "active"
                 }`}
